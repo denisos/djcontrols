@@ -31,6 +31,9 @@ const mockSongs = [
   }
 ];
 
+// security concerns (since this is in the open)
+// https://stackoverflow.com/questions/37482366/is-it-safe-to-expose-firebase-apikey-to-the-public
+//
 var firebaseConfig = {
   apiKey: "AIzaSyChYtrFXsFsQahwlGbHR0LI1T68ffjZPF8",
   authDomain: "djcontrols-f170b.firebaseapp.com",
@@ -61,7 +64,7 @@ function App() {
 
       // check if has data (false if none) and set in songs
       if (snapshot.exists()) {
-        // convert firebase list from key: song to a more friendly list
+        // convert firebase list from key: value pair to a more UI friendly list
         snapshot.forEach(childSnapshot => {
           let childKey = childSnapshot.key;  // the firebase generated key
           let song = childSnapshot.val();    // the song object
