@@ -1,0 +1,10 @@
+.song-list {
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.song-list li .song-name {
+  padding-right: 30px;
+  margin: 0;
+}
